@@ -1,0 +1,28 @@
+
+    <div class="row">
+         <h1 style="text-align:center;">Add Car</h1>
+         <div style="width:50%; margin:25px auto;">
+             <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="form-group">
+                   <label> Name:</label>
+                   <input class="form-control" name="name" type="text" placeholder="name" required ngModel>
+                </div>
+                <div class="form-group">
+                    <label>Car type:</label> 
+                    <input class="form-control" name="type" type="text" placeholder="luxury" required ngModel>
+                 </div>
+                <div class="form-group">
+                    <label>Price:(Rs.)</label> 
+                    <input class="form-control" name="price" type="number" placeholder="100" required ngModel>
+                 </div>
+                <div class="form-group">
+                    <label>Car Image:</label> 
+                    <input class="form-control" name="image" type="text" placeholder="car image link" required ngModel>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+

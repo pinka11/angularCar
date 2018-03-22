@@ -1,0 +1,60 @@
+<div style="margin:15px;">
+    <div>
+<h1 style="text-align:center;display:inline;">List of Users</h1>
+
+<div style="float:right;" >
+        <h5 style="display:inline;">User Search</h5>
+        <form style="float:right" (ngSubmit)="onSubmit(t)" #t="ngForm">
+         <input type="text" name="name" ngModel>
+         <button class="btn btn-primary btn-sm">Search</button>
+        </form>
+    </div>
+    </div>
+        <br>
+<div class="row">
+        <div class="col-md-6" >
+<table border="3px">
+    <tr style="background:black;color:white;">
+        <th>Name</th>
+        <th>Username</th>
+        <th>Gender</th>
+        <th>DOB</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>DL</th>
+        <th>Disable/Enable</th>
+    </tr>
+            <tr *ngFor="let user of users;let i=index">
+            <th>{{user.name}} </th>  
+            <th>{{user.username}} </th> 
+            <th>{{user.gender}}</th> 
+            <th>{{ user.dob | date:'MM/dd/yyyy'}}</th>
+            <th>{{user.email}}</th> 
+            <th><p>{{user.state}},</p><p> {{user.city}},</p><p>{{user.pin}}</p> </th>
+    <th><img [src]="user.dl " style="height:60px;width:120;">
+                <button class="btn btn-success btn-xs" *ngIf="user.approval==true" disabled>Approved</button>
+                <button class="btn btn-primary btn-xs" *ngIf="user.approval==false" (click)="getApprove(user.approval,user._id,i)">Approve</button>
+                </th> 
+            <th>
+                 <button class="btn btn-success" *ngIf="user.disable==true" (click)="DisableNEnable(user.disable,user._id,i)">Enable</button>
+                 <button class="btn btn-primary" *ngIf="user.disable==false"(click)="DisableNEnable(user.disable,user._id,i)">Disable</button>
+            </th>
+            </tr>
+</table>
+</div>
+<div class="col-md-2" style="float:right;padding-left:0px;padding-right:0px;">
+        <h3>Select city</h3>
+        <form (ngSubmit)="onFilter(f)" #f="ngForm">
+          <div class="form-group" *ngFor="let dcity of dcity">
+            <input type="checkbox" name={{dcity}} (change)="onchange(dcity)" ngModel>{{dcity}}
+            </div>
+            <button class="btn  btn-sm btn-primary">Done</button>
+        </form>
+</div>
+</div>
+</div>
+
+
+
+
+

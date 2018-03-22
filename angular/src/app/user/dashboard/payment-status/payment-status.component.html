@@ -1,0 +1,12 @@
+  <div style="width:50%; margin:25px auto;">
+    <div *ngIf="key">
+           <h1 style="text-align:center;margin-top:45px;"> Successful Payment</h1>
+           <br>
+          <a style="float:right;" routerLink="/user/dashboard" class="btn btn-success">Click For More Booking..</a>   
+    </div>
+    <div *ngIf="!key" >
+      <h1 style="text-align:center;margin-top:45px;">Payment Fail</h1>
+      <br>
+      <a style="float:right;" routerLink="/user" class="btn btn-warning">Try again..</a>  
+  </div>
+</div>

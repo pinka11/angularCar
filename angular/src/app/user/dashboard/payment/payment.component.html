@@ -1,0 +1,35 @@
+            <div class="row">
+               <h1 style="text-align:center;">Card Details</h1>
+               <div style="width:50%; margin:25px auto;">
+                   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                      <div class="form-group">
+                         <label>Bank Name</label> 
+                         <input class="form-control" name="bankname" type="text" required ngModel>
+                      </div>
+                      <div class="form-group ">
+                              <label>Card Type</label> 
+                              <select class="form-control" name="cardtype" required ngModel>
+                                  <option>Select card</option>
+                                  <option>Debit Card</option>
+                                  <option>Credit Card</option>
+                              </select>
+                      </div>
+                      <div class="form-group">
+                              <label>Card Number:</label>
+                              <input class="form-control" name="cardno" type="number" required ngModel>
+                      </div>
+                      <div class="form-group">
+                              <label>Cvv:</label> 
+                          <input type="number" class="form-control" name="cvv" required ngModel>
+                      </div>
+                      <div class="form-group">
+                          <label>Payable Amount:</label> 
+                          <input type="number" disabled class="form-control" name="amount" required [ngModel]="userService.amount">
+                      </div>
+                      <div class="form-group">
+                          <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!f.valid" >Proceed..</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      

@@ -1,0 +1,18 @@
+
+    <div class="row" style="margin-top:5px;margin-left:30px;">
+    <div class="col-md-9">
+    <div class="thumbnail">
+ <img [src]="car.image ">
+   {{car.name}} 
+   {{car.type}}
+   {{car.price}}
+  <div >
+  <form  style="display:inline;"> 
+        <button class="btn btn-primary" (click)="onBook()" *ngIf="userService.users.approval" >Book</button>
+    <button class="btn btn-primary" disabled *ngIf="userService.users.approval != true">Book</button>
+        <button disabled class="btn btn-primary" *ngIf="userService.users.disable">Book</button>
+  </form>
+ </div>
+    </div>
+    </div>
+</div>

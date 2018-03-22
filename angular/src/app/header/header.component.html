@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Car Rental</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default" style="margin-bottom:0;">
+            <div class="conatiner-fliud">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" routerLink="">Car Rental</a> 
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                                <li><a *ngIf="!userService.users" routerLink="user/registerUser">Registration</a></li>
+                            <li><a *ngIf="!userService.users" routerLink="login">Login</a></li>
+                                <li><a *ngIf="userService.users" (click)="onLogout()" style="cursor:pointer">Log out</a></li>                            
+                            
+                        </ul>
+                    </div>       
+            </div>
+        </nav>
+        </body>
+        </html>
+
+        

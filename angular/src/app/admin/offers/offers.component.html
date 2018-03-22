@@ -1,0 +1,22 @@
+<div class="container">
+<div style="margin-top:20px;">
+<h1 style="display:inline;">Available Offers</h1>
+<a routerLink="../addCoupon" class="btn btn-primary">ADD</a>
+</div>
+<div class="row" style="margin-top:10px;">
+    <div class="col-md-8">
+<table border="3px">
+<tr style="background:black;color:white;">
+    <th>Provider Name</th>
+    <th>Discount</th>
+    <th>Code</th>
+</tr >
+        <tr *ngFor="let offers of offers">
+        <th> {{offers.name }}</th>  
+        <th> {{offers.discount}}</th> 
+        <th>{{offers.code}} </th> 
+      </tr>
+</table>
+</div>
+</div>
+</div>
